@@ -1,30 +1,29 @@
+pipeline { 
+
+agent docker:'ubuntu'
+
   node {
     def app
-
-    stage('Clone repository') {
+	stages{
+    
+	stage('Clone repository') {
         checkout scm
     }
 
     stage('Build image') {
- 	
-
-	echo "${env.BUILD_NUMBER}"
- app = docker.build("aboubakr/bookings")
-
-
-    }
+ 	echo "${env.BUILD_NUMBER}"
+ 	app = docker.build("aboubakr/bookings")
+	}
 
      stage('Test image') {
-        
-	   echo "tests passed"
+        echo "tests passed"
        /*     sh 'curl http://http://ec2-34-211-62-126.us-west-2.compute.amazonaws.com:80 || exit 1'*/
         
     }   
 
     stage('Push image') {
        
-     
-   docker.withRegistry("https://registry.hub.docker.com", 'docker-hub-credential') {
+     docker.withRegistry("https://registry.hub.docker.com", 'docker-hub-credential') {
 
           app.push("${env.BUILD_NUMBER}")
 	
@@ -32,4 +31,6 @@
             
         }
     }
+}
+}
 }
