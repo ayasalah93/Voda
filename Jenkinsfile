@@ -1,8 +1,8 @@
 pipeline { 
 
-agent docker:'ubuntu'
+agent any
 
-  node {
+  
     def app
 	stages{
     
@@ -33,4 +33,4 @@ agent docker:'ubuntu'
     }
 }
 }
-}
+
