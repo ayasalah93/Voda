@@ -28,7 +28,6 @@
 
           app.push("${env.BUILD_NUMBER}")
 	
-/*	app.push("cinema/movies")*/
 	   app.push("latest") 
             
         }
