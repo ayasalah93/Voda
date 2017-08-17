@@ -9,7 +9,7 @@
  	
 /*	sh 'docker-compose up -d'*/
 
-        app = docker.build("ayasalah93/Voda")
+        app = docker.build("ayasalah93/voda")
 
 
     }
