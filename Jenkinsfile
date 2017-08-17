@@ -6,8 +6,6 @@
     }
 
     stage('Build image') {
- 	
-/*	sh 'docker-compose up -d'*/
 
         app = docker.build("ayasalah93/voda")
 
