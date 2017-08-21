@@ -35,7 +35,7 @@
 	    sh "export DEPLOYMENT_NAME=testkube"
 	    sh "export IMAGE_NAME=ayasalah93/voda"
 	    sh "export REPLICAS=2"   
-	    sh "sudo ./deploy.sh"
+	    sh "./deploy.sh"
         waitForServices()
     }
 }
