@@ -31,10 +31,7 @@
         }
     }
 	  
-    stage('Deploy image') {
-	    sh "export DEPLOYMENT_NAME=testkube"
-	    sh "export IMAGE_NAME=ayasalah93/voda"
-	    sh "export REPLICAS=2" 
+    stage('Deploy image') { 
 	    sh "chmod +x deploy.sh"
 	    sh "./deploy.sh"
         waitForServices()
