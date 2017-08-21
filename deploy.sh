@@ -1,6 +1,6 @@
-if [[ $(kubectl get deployments | grep $DEPLOYMENT_NAME) ]]; then
+if [[ $(kubectl get deployments | grep testkube) ]]; then
 echo "deployments exists"
 else
-kubectl run $DEPLOYMENT_NAME --image=$IMAGE_NAME --replicas=$REPLICAS --output=yaml --dry-run > "$IMAGE_NAME-rc.yaml"
-kubectl create -f "$IMAGE_NAME-rc.yaml"
+kubectl run testkube --image=ayasalah93/voda --replicas=2 --output=yaml --dry-run > "ayasalah93/voda-rc.yaml"
+kubectl create -f "ayasalah93/voda-rc.yaml"
 fi
