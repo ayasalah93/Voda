@@ -7,7 +7,7 @@
 
     stage('Build image') {
 
-        app = docker.build("ayasalah93/voda")
+        app = docker.build("ayasalah93/voda2")
 
 
     }
